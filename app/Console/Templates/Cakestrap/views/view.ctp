@@ -20,10 +20,10 @@
 <div id="page-container" class="row">
 
 	<div id="sidebar" class="col-sm-3">
-		
+
 		<div class="actions">
-			
-			<ul class="list-group">			
+
+			<ul class="list-group">
 				<?php
 					echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => '')); ?> </li>\n";
 					echo "\t\t<li class=\"list-group-item\"><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => ''), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
@@ -40,19 +40,19 @@
 							}
 						}
 					}
-				?>				
+				?>
 			</ul><!-- /.list-group -->
-			
+
 		</div><!-- /.actions -->
-		
+
 	</div><!-- /#sidebar .span3 -->
-	
+
 	<div id="page-content" class="col-sm-9">
-		
+
 		<div class="<?php echo $pluralVar; ?> view">
 
 			<h2><?php echo "<?php  echo __('{$singularHumanName}'); ?>"; ?></h2>
-			
+
 			<div class="table-responsive">
 				<table class="table table-striped table-bordered">
 					<tbody>
@@ -122,13 +122,13 @@
 			$otherSingularVar = Inflector::variable($alias);
 			$otherPluralHumanName = Inflector::humanize($details['controller']);
 			?>
-			
+
 			<div class="related">
 
 				<h3><?php echo "<?php echo __('Related " . $otherPluralHumanName . "'); ?>"; ?></h3>
-				
+
 				<?php echo "<?php if (!empty(\${$singularVar}['{$alias}'])): ?>\n"; ?>
-					
+
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered">
 							<thead>
@@ -163,17 +163,18 @@
 							</tbody>
 						</table><!-- /.table table-striped table-bordered -->
 					</div><!-- /.table-responsive -->
-					
+
 				<?php echo "<?php endif; ?>\n\n"; ?>
-				
+
 				<div class="actions">
 					<?php echo "<?php echo \$this->Html->link('<i class=\"icon-plus icon-white\"></i> '.__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => 'btn btn-primary', 'escape' => false)); ?>"; ?>
+
 				</div><!-- /.actions -->
-				
+
 			</div><!-- /.related -->
 
 		<?php endforeach; ?>
-	
+
 	</div><!-- /#page-content .span9 -->
 
 </div><!-- /#page-container .row -->
