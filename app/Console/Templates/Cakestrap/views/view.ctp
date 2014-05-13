@@ -176,4 +176,4 @@
 	
 	</div><!-- /#page-content .span9 -->
 
-</div><!-- /#page-container .row-fluid -->
+</div><!-- /#page-container .row -->
