@@ -63,19 +63,19 @@
 								foreach ($associations['belongsTo'] as $alias => $details) {
 									if ($field === $details['foreignKey']) {
 										$isKey = true;
-										echo "<tr>";
+										echo "<tr>\n";
 										echo "\t\t<td><strong><?php echo __('" . Inflector::humanize(Inflector::underscore($alias)) . "'); ?></strong></td>\n";
 										echo "\t\t<td>\n\t\t\t<?php echo \$this->Html->link(\${$singularVar}['{$alias}']['{$details['displayField']}'], array('controller' => '{$details['controller']}', 'action' => 'view', \${$singularVar}['{$alias}']['{$details['primaryKey']}']), array('class' => '')); ?>\n\t\t\t&nbsp;\n\t\t</td>\n";
-										echo "</tr>";
+										echo "</tr>\n";
 										break;
 									}
 								}
 							}
 							if ($isKey !== true) {
-								echo "<tr>";
+								echo "<tr>\n";
 								echo "\t\t<td><strong><?php echo __('" . Inflector::humanize($field) . "'); ?></strong></td>\n";
 								echo "\t\t<td>\n\t\t\t<?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>\n\t\t\t&nbsp;\n\t\t</td>\n";
-								echo "</tr>";
+								echo "</tr>\n";
 							}
 						}
 						?>
@@ -94,10 +94,10 @@
 						<table class="table table-striped table-bordered">
 							<?php
 							foreach ($details['fields'] as $field) {
-								echo "<tr>";
+								echo "<tr>\n";
 								echo "\t\t<td><strong><?php echo __('" . Inflector::humanize($field) . "'); ?></strong></td>\n";
 								echo "\t\t<td><strong><?php echo \${$singularVar}['{$alias}']['{$field}']; ?>\n&nbsp;</strong></td>\n";
-								echo "</tr>";
+								echo "</tr>\n";
 							}
 							?>
 						</table><!-- /.table table-striped table-bordered -->
